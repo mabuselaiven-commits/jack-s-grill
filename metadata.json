@@ -1,0 +1,6 @@
+{
+  "name": "Jack's Grill",
+  "description": "Family, Umdeni! Premium restaurant and grill in New Doornfontein, Johannesburg, South Africa.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

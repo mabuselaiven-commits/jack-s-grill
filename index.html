@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Jack's Grill | Premium Flame-Grilled Restaurant & Kota | Johannesburg</title>
+  <meta name="description" content="Savor the finest flame-grilled steaks, wings, traditional beef stews, Kasie Kotas, and iconic Bunny Chows at Jack's Grill in New Doornfontein, Johannesburg. Family, Umdeni!">
+  <meta name="keywords" content="Jack's Grill, Restaurant Johannesburg, Kota, Bunny Chow, Boerewors, Flame Grilled, New Doornfontein, South African Takeaway, Family Umdeni, Beef Stew">
+  <meta name="author" content="Jack's Grill">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://jacksgrill.co.za/">
+  <meta property="og:title" content="Jack's Grill | Premium Flame-Grilled Restaurant & Kota">
+  <meta property="og:description" content="Experience the taste of family and tradition. Located in New Doornfontein, Joburg. Order on WhatsApp or Uber Eats.">
+  <meta property="og:image" content="/assets/images/hero_grill.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Jack's Grill | Premium Flame-Grilled Restaurant & Kota">
+  <meta property="twitter:description" content="Savor premium flame-grilled steaks, wings, and kasie kotas. Family, Umdeni!">
+  <meta property="twitter:image" content="/assets/images/hero_grill.jpg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/style.css">
+  
+  <!-- Favicon Mock -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
+</head>
+<body>
+
+  <!-- Sticky Header Navigation -->
+  <header id="header" class="glassmorphism">
+    <div class="container">
+      <a href="#home" class="logo-container" id="nav-logo">
+        <div class="logo-icon has-image"><img src="/assets/images/logo.jpg" alt="Logo" referrerpolicy="no-referrer"></div>
+        <div>
+          <span class="logo-text">JACK'S <span class="text-gold">GRILL</span></span>
+          <div class="logo-tagline">Family, Umdeni!</div>
+        </div>
+      </a>
+      
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="#home" class="active" id="nav-link-home">Home</a></li>
+          <li><a href="#menu" id="nav-link-menu">Menu</a></li>
+          <li><a href="#about" id="nav-link-about">About</a></li>
+          <li><a href="#gallery" id="nav-link-gallery">Gallery</a></li>
+          <li><a href="#location" id="nav-link-location">Location</a></li>
+          <li><a href="#contact" id="nav-link-contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" aria-label="Toggle Menu" id="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-bg" id="hero-bg-img"></div>
+    <div class="hero-overlay"></div>
+    <canvas id="hero-smoke-canvas" class="hero-smoke"></canvas>
+    
+    <div class="hero-content">
+      <div class="hero-badge reveal" id="hero-badge">
+        <i data-lucide="flame" style="width: 16px; height: 16px;"></i>
+        <span>Authentic Kasi Flavors</span>
+      </div>
+      <h1 class="hero-title reveal reveal-delay-1" id="hero-main-title">
+        JACK'S <span class="text-gradient">GRILL</span>
+      </h1>
+      <p class="hero-tagline reveal reveal-delay-2" id="hero-sub-tagline">
+        Family, Umdeni!
+      </p>
+      <div class="hero-buttons reveal reveal-delay-3" id="hero-action-buttons">
+        <a href="#menu" class="btn btn-primary" id="hero-btn-menu">
+          <i data-lucide="menu" style="width: 18px; height: 18px;"></i>
+          <span>View Menu</span>
+        </a>
+        <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20place%20an%20order." 
+           class="btn btn-secondary" 
+           target="_blank" 
+           referrerpolicy="no-referrer"
+           id="hero-btn-whatsapp">
+          <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
+          <span>Order on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+
+    <a href="#features" class="scroll-indicator" id="hero-scroll-link">
+      <span></span>
+      Scroll Down
+    </a>
+  </section>
+
+  <!-- Premium Features -->
+  <section id="features">
+    <div class="container">
+      <div class="features-grid">
+        <!-- Card 1 -->
+        <div class="feature-card reveal" id="feature-card-1">
+          <div class="feature-icon-wrapper">
+            <i data-lucide="leaf" style="width: 36px; height: 36px;"></i>
+          </div>
+          <h3 class="feature-title">Fresh Ingredients</h3>
+          <p class="feature-desc">We source only the freshest produce and premium A-grade cuts daily for unmatched flavors.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="feature-card reveal reveal-delay-1" id="feature-card-2">
+          <div class="feature-icon-wrapper">
+            <i data-lucide="zap" style="width: 36px; height: 36px;"></i>
+          </div>
+          <h3 class="feature-title">Fast Service</h3>
+          <p class="feature-desc">Hungry? Our grillmasters handle orders with speed, ensuring hot sizzle straight to your plate.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="feature-card reveal reveal-delay-2" id="feature-card-3">
+          <div class="feature-icon-wrapper">
+            <i data-lucide="banknote" style="width: 36px; height: 36px;"></i>
+          </div>
+          <h3 class="feature-title">Affordable Meals</h3>
+          <p class="feature-desc">Premium gourmet taste at real, budget-friendly kasi prices. Hearty meals that love your wallet.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="feature-card reveal reveal-delay-3" id="feature-card-4">
+          <div class="feature-icon-wrapper">
+            <i data-lucide="heart" style="width: 36px; height: 36px;"></i>
+          </div>
+          <h3 class="feature-title">Family Friendly</h3>
+          <p class="feature-desc">Umdeni is at the heart of everything. We craft meals designed for sharing with your loved ones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Gourmet Selection</span>
+        <h2 class="section-title text-gradient">The Legendary Menu</h2>
+      </div>
+
+      <!-- Menu Tabs -->
+      <div class="menu-tabs reveal" id="menu-filter-tabs">
+        <button class="tab-btn active" data-filter="all">All Specialties</button>
+        <button class="tab-btn" data-filter="mains">Main Meals</button>
+        <button class="tab-btn" data-filter="bunnies">Bunny Chows & Kotas</button>
+        <button class="tab-btn" data-filter="wings">Crispy Wings</button>
+        <button class="tab-btn" data-filter="platters">Family Platas</button>
+        <button class="tab-btn" data-filter="fries">Fries & Combos</button>
+      </div>
+
+      <!-- Menu Extra Info -->
+      <div class="menu-info-banner reveal" id="menu-banner">
+        <i data-lucide="info" style="width: 20px; height: 20px;"></i>
+        <span>All Main Meals are served with a choice of freshly prepared Pap, Rice, or Samp.</span>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="menu-grid">
+        
+        <!-- Beef Stew -->
+        <div class="menu-card reveal" data-category="mains" id="menu-item-beef-stew">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/beef_stew.jpg" alt="Jack's Beef Stew" class="menu-img" referrerpolicy="no-referrer">
+            <span class="menu-badge">Best Seller</span>
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">Beef Stew</h3>
+              <span class="menu-price">R70</span>
+            </div>
+            <p class="menu-description">Hearty, slow-simmered premium beef chunks in a thick, savory gravy. Served with Pap, Rice, or Samp.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%20Beef%20Stew." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 1/2 Chicken -->
+        <div class="menu-card reveal" data-category="mains" id="menu-item-half-chicken">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/hero_grill.jpg" alt="Flame Grilled 1/2 Chicken" class="menu-img" referrerpolicy="no-referrer">
+            <span class="menu-badge">Hot off Coals</span>
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">1/2 Chicken</h3>
+              <span class="menu-price">R70</span>
+            </div>
+            <p class="menu-description">Sizzling flame-grilled half-chicken basted in Jack's signature smoky BBQ. Served with Pap, Rice, or Samp.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%201/2%20Chicken." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2x Wors -->
+        <div class="menu-card reveal" data-category="mains" id="menu-item-wors">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/meat_platter.jpg" alt="Sizzling Wors" class="menu-img" referrerpolicy="no-referrer">
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">2x Wors</h3>
+              <span class="menu-price">R70</span>
+            </div>
+            <p class="menu-description">Double helpings of authentic, thick South African boerewors grilled over coals. Served with Pap, Rice, or Samp.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%202x%20Wors." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Steak -->
+        <div class="menu-card reveal" data-category="mains" id="menu-item-steak">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/hero_grill.jpg" alt="Flame Grilled Steak" class="menu-img" referrerpolicy="no-referrer">
+            <span class="menu-badge">Prime Cut</span>
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">Steak</h3>
+              <span class="menu-price">R80</span>
+            </div>
+            <p class="menu-description">A-grade tender beef steak grill-seared with traditional spice seasoning. Served with Pap, Rice, or Samp.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%20Steak." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chicken & Wors Combo -->
+        <div class="menu-card reveal" data-category="mains" id="menu-item-chicken-wors">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/meat_platter.jpg" alt="Chicken & Wors Combo" class="menu-img" referrerpolicy="no-referrer">
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">Chicken & Wors</h3>
+              <span class="menu-price">R100</span>
+            </div>
+            <p class="menu-description">Gourmet dual feast of grilled quarter chicken and a juicy wors portion. Served with Pap, Rice, or Samp.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%20Chicken%20%26%20Wors." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Steak & Wors Combo -->
+        <div class="menu-card reveal" data-category="mains" id="menu-item-steak-wors">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/meat_platter.jpg" alt="Steak & Wors Combo" class="menu-img" referrerpolicy="no-referrer">
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">Steak & Wors</h3>
+              <span class="menu-price">R110</span>
+            </div>
+            <p class="menu-description">Tender grilled sirloin steak combined with our traditional spiced boerewors. Served with Pap, Rice, or Samp.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%20Steak%20%26%20Wors." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kasi Kota -->
+        <div class="menu-card reveal" data-category="bunnies" id="menu-item-kota">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/kasi_kota.jpg" alt="Legendary Kasi Kota" class="menu-img" referrerpolicy="no-referrer">
+            <span class="menu-badge">Joburg Favorite</span>
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">Kasi Kota</h3>
+              <span class="menu-price">R45</span>
+            </div>
+            <p class="menu-description">Classic quarter bread hollowed and loaded with golden fries, fried russian sausage, fried egg, cheese, and fresh kasi garnish.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%20Kasi%20Kota." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mince Bunny Chow -->
+        <div class="menu-card reveal" data-category="bunnies" id="menu-item-mince-bunny">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/mince_bunny.jpg" alt="Mince Bunny Chow" class="menu-img" referrerpolicy="no-referrer">
+            <span class="menu-badge">Traditional</span>
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">Mince Bunnye</h3>
+              <span class="menu-price">R40</span>
+            </div>
+            <p class="menu-description">Traditional bunny chow loaded to overflowing with slow-simmered savory minced beef curry, topped with melted cheese and hand-cut chips.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%20Mince%20Bunnye." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BBQ Wings -->
+        <div class="menu-card reveal" data-category="wings" id="menu-item-wings">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/bbq_wings.jpg" alt="Crispy BBQ Wings" class="menu-img" referrerpolicy="no-referrer">
+            <span class="menu-badge">Gourmet Crisp</span>
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">4 Full Wings</h3>
+              <span class="menu-price">R85</span>
+            </div>
+            <p class="menu-description">Four crispy full-sized chicken wings flame-grilled and tossed in a sticky, sweet-and-smoky BBQ glaze. Served with golden fries.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%204%20Full%20Wings." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plata 1 -->
+        <div class="menu-card reveal" data-category="platters" id="menu-item-plata-1">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/meat_platter.jpg" alt="Steak + Wings + Wors Plata" class="menu-img" referrerpolicy="no-referrer">
+            <span class="menu-badge">Perfect Sharing</span>
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">Steak + Wings + Wors</h3>
+              <span class="menu-price">R160</span>
+            </div>
+            <p class="menu-description">The local sharing favorite. Tender grilled steak, BBQ wings, and sizzled boerewors. Served with a mountain of hot Pap.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%20Steak%20%2B%20Wings%20%2B%20Wors%20Plata." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plata 2 -->
+        <div class="menu-card reveal" data-category="platters" id="menu-item-plata-2">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/meat_platter.jpg" alt="Steak + Chicken + Wors Plata" class="menu-img" referrerpolicy="no-referrer">
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">Steak + Chicken + Wors</h3>
+              <span class="menu-price">R210</span>
+            </div>
+            <p class="menu-description">Satiating platter with rich tender steak, half flame-grilled chicken, and boerewors. Served with a generous portion of steaming Pap.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%20Steak%20%2B%20Chicken%20%2B%20Wors%20Plata." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plata 3 (Mega Platter) -->
+        <div class="menu-card reveal" data-category="platters" id="menu-item-plata-3">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/meat_platter.jpg" alt="Mega Feast Plata" class="menu-img" referrerpolicy="no-referrer">
+            <span class="menu-badge">Mega Family Feast</span>
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">The Umdeni Feast</h3>
+              <span class="menu-price">R510</span>
+            </div>
+            <p class="menu-description">Our ultimate family platter: 2x Steaks, 2x half Chickens, 2x portions of juicy Boerewors, and 2x crispy full Wings. Served with family-sized Pap.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%20Umdeni%20Feast%20Plata." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Fries S & L -->
+        <div class="menu-card reveal" data-category="fries" id="menu-item-fries">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/bbq_wings.jpg" alt="Signature Spiced Fries" class="menu-img" referrerpolicy="no-referrer">
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">Signature Fries</h3>
+              <span class="menu-price">R20 / R45</span>
+            </div>
+            <p class="menu-description">Hand-cut, double-fried golden potato chips sprinkled with Jack's secret dry-rub kasi shaker seasoning.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%20Signature%20Fries." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chicken & Fries Combo -->
+        <div class="menu-card reveal" data-category="fries" id="menu-item-combo-chicken">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/bbq_wings.jpg" alt="Chicken & Fries Combo" class="menu-img" referrerpolicy="no-referrer">
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">Chicken + Fries</h3>
+              <span class="menu-price">R80</span>
+            </div>
+            <p class="menu-description">Golden flame-grilled chicken basted in spicy glaze and served with our generous signature rustic fries.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%20Chicken%20%2B%20Fries%20Combo." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wings & Fries Combo -->
+        <div class="menu-card reveal" data-category="fries" id="menu-item-combo-wings">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/bbq_wings.jpg" alt="Wings & Fries Combo" class="menu-img" referrerpolicy="no-referrer">
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">Wings + Fries</h3>
+              <span class="menu-price">R70</span>
+            </div>
+            <p class="menu-description">Glistening sticky-sweet BBQ grilled wings served hot with a heap of signature seasoned potato fries.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%20Wings%20%2B%20Fries%20Combo." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wors & Fries Combo -->
+        <div class="menu-card reveal" data-category="fries" id="menu-item-combo-wors">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/meat_platter.jpg" alt="Wors & Fries Combo" class="menu-img" referrerpolicy="no-referrer">
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">Worse + Fries</h3>
+              <span class="menu-price">R65</span>
+            </div>
+            <p class="menu-description">Thick traditional boerewors grilled over red-hot coals, paired beautifully with signature rustic fries.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%20Worse%20%2B%20Fries%20Combo." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wors Roll & Fries Combo -->
+        <div class="menu-card reveal" data-category="fries" id="menu-item-combo-wors-roll">
+          <div class="menu-img-wrapper">
+            <img src="/assets/images/meat_platter.jpg" alt="Boerewors Roll & Fries" class="menu-img" referrerpolicy="no-referrer">
+            <span class="menu-badge">Value Meal</span>
+          </div>
+          <div class="menu-details">
+            <div class="menu-meta">
+              <h3 class="menu-name">Worse Roll + Fries</h3>
+              <span class="menu-price">R65</span>
+            </div>
+            <p class="menu-description">Classic boerewors roll in a soft, fresh long bun drizzled with caramelised onions and sweet sauce, with side fries.</p>
+            <div class="menu-footer">
+              <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20order%20the%20Worse%20Roll%20%2B%20Fries%20Combo." 
+                 class="btn btn-primary" target="_blank" referrerpolicy="no-referrer">
+                <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                <span>Order on WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="about-img-main-wrapper">
+            <img src="/assets/images/beef_stew.jpg" alt="Jack's Culinary Art" class="about-img-main" referrerpolicy="no-referrer">
+          </div>
+          <div class="about-floating-card glassmorphism">
+            <div class="about-stats-num">100%</div>
+            <div class="about-stats-label">Flame Grilled Taste</div>
+            <p class="about-stats-desc">Traditional wood and coal grill techniques handed down through generations.</p>
+          </div>
+        </div>
+        
+        <div class="about-content">
+          <span class="section-subtitle">Our Heritage</span>
+          <h2 class="section-title text-gradient" style="margin-bottom: 2rem;">Where Family & Flavor Sizzle Together</h2>
+          <h3 class="about-tagline text-gold">"Family, Umdeni!"</h3>
+          <p class="about-p">At Jack’s Grill, we don’t just serve meals; we craft communal culinary experiences. Nestled in the heart of New Doornfontein, Johannesburg, we have become the local benchmark for the ultimate South African grill, legendary Kasie Kotas, rich stews, and savory mince bunnies.</p>
+          <p class="about-p">Our philosophy is built entirely on the concept of "Umdeni" (Family). This means we cook every meal with the utmost respect, using premium fresh ingredients, hand-chopped toppings, and secret traditional spices. When you dine at Jack's, you're not just a customer—you're family.</p>
+          
+          <div class="about-highlights">
+            <div class="about-highlight-item reveal reveal-delay-1">
+              <div class="about-highlight-icon">
+                <i data-lucide="award" style="width: 24px; height: 24px;"></i>
+              </div>
+              <span class="about-highlight-text">A-Grade Meat Cuts Only</span>
+            </div>
+            <div class="about-highlight-item reveal reveal-delay-2">
+              <div class="about-highlight-icon">
+                <i data-lucide="users" style="width: 24px; height: 24px;"></i>
+              </div>
+              <span class="about-highlight-text">True Umdeni Culture</span>
+            </div>
+            <div class="about-highlight-item reveal reveal-delay-3">
+              <div class="about-highlight-icon">
+                <i data-lucide="heart-handshake" style="width: 24px; height: 24px;"></i>
+              </div>
+              <span class="about-highlight-text">Exceptional Customer Service</span>
+            </div>
+            <div class="about-highlight-item reveal reveal-delay-4">
+              <div class="about-highlight-icon">
+                <i data-lucide="map-pin" style="width: 24px; height: 24px;"></i>
+              </div>
+              <span class="about-highlight-text">Proudly New Doornfontein</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Visual Experience</span>
+        <h2 class="section-title text-gradient">Sights of Jack's</h2>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Item 1 -->
+        <div class="gallery-item reveal" id="gallery-item-1">
+          <img src="/assets/images/hero_grill.jpg" alt="Sizzling Charcoal Grill" class="gallery-item-img" referrerpolicy="no-referrer">
+          <div class="gallery-overlay">
+            <span class="gallery-category">The Hearth</span>
+            <h4 class="gallery-title">Live Coal Flame-Grill</h4>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="gallery-item reveal reveal-delay-1" id="gallery-item-2">
+          <img src="/assets/images/beef_stew.jpg" alt="Beef Stew Served with Pap" class="gallery-item-img" referrerpolicy="no-referrer">
+          <div class="gallery-overlay">
+            <span class="gallery-category">Mains</span>
+            <h4 class="gallery-title">Tender Slow Stew</h4>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="gallery-item reveal reveal-delay-2" id="gallery-item-3">
+          <img src="/assets/images/kasi_kota.jpg" alt="Crispy Kota Stuffed Full" class="gallery-item-img" referrerpolicy="no-referrer">
+          <div class="gallery-overlay">
+            <span class="gallery-category">Local Specialties</span>
+            <h4 class="gallery-title">Ultimate Loaded Kota</h4>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="gallery-item reveal" id="gallery-item-4">
+          <img src="/assets/images/mince_bunny.jpg" alt="Traditional Mince Bunny Chow" class="gallery-item-img" referrerpolicy="no-referrer">
+          <div class="gallery-overlay">
+            <span class="gallery-category">Street Food</span>
+            <h4 class="gallery-title">Mince Bunny Chow</h4>
+          </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="gallery-item reveal reveal-delay-1" id="gallery-item-5">
+          <img src="/assets/images/meat_platter.jpg" alt="Mega Family Meat Platter" class="gallery-item-img" referrerpolicy="no-referrer">
+          <div class="gallery-overlay">
+            <span class="gallery-category">Platas</span>
+            <h4 class="gallery-title">Steak + Chicken + Wors</h4>
+          </div>
+        </div>
+        <!-- Item 6 -->
+        <div class="gallery-item reveal reveal-delay-2" id="gallery-item-6">
+          <img src="/assets/images/bbq_wings.jpg" alt="Golden BBQ Wings and Chips" class="gallery-item-img" referrerpolicy="no-referrer">
+          <div class="gallery-overlay">
+            <span class="gallery-category">Sides</span>
+            <h4 class="gallery-title">Wings & Shaker Fries</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Reviews</span>
+        <h2 class="section-title text-gradient">What the Umdeni Says</h2>
+      </div>
+
+      <div class="testimonials-slider-container reveal">
+        <div class="testimonial-track-wrapper">
+          <div class="testimonial-track" id="testimonial-track-container">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card glassmorphism">
+              <div class="testimonial-quote-icon">“</div>
+              <div class="testimonial-stars">
+                <i data-lucide="star" style="fill: currentColor; width: 18px; height: 18px;"></i>
+                <i data-lucide="star" style="fill: currentColor; width: 18px; height: 18px;"></i>
+                <i data-lucide="star" style="fill: currentColor; width: 18px; height: 18px;"></i>
+                <i data-lucide="star" style="fill: currentColor; width: 18px; height: 18px;"></i>
+                <i data-lucide="star" style="fill: currentColor; width: 18px; height: 18px;"></i>
+              </div>
+              <p class="testimonial-text">"The beef stew is out of this world! Melt-in-your-mouth beef, thick delicious gravy. It reminds me exactly of home cooking. Umdeni indeed!"</p>
+              <h4 class="testimonial-author">Lerato M.</h4>
+              <span class="testimonial-role">Local Resident — New Doornfontein</span>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card glassmorphism">
+              <div class="testimonial-quote-icon">“</div>
+              <div class="testimonial-stars">
+                <i data-lucide="star" style="fill: currentColor; width: 18px; height: 18px;"></i>
+                <i data-lucide="star" style="fill: currentColor; width: 18px; height: 18px;"></i>
+                <i data-lucide="star" style="fill: currentColor; width: 18px; height: 18px;"></i>
+                <i data-lucide="star" style="fill: currentColor; width: 18px; height: 18px;"></i>
+                <i data-lucide="star" style="fill: currentColor; width: 18px; height: 18px;"></i>
+              </div>
+              <p class="testimonial-text">"Hands down the best Kota in Johannesburg. The Russian sausage is juicy, the egg is perfectly soft-fried, and the cheese is beautifully melted."</p>
+              <h4 class="testimonial-author">Sipho K.</h4>
+              <span class="testimonial-role">Kasi Food Enthusiast</span>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card glassmorphism">
+              <div class="testimonial-quote-icon">“</div>
+              <div class="testimonial-stars">
+                <i data-lucide="star" style="fill: currentColor; width: 18px; height: 18px;"></i>
+                <i data-lucide="star" style="fill: currentColor; width: 18px; height: 18px;"></i>
+                <i data-lucide="star" style="fill: currentColor; width: 18px; height: 18px;"></i>
+                <i data-lucide="star" style="fill: currentColor; width: 18px; height: 18px;"></i>
+                <i data-lucide="star" style="fill: currentColor; width: 18px; height: 18px;"></i>
+              </div>
+              <p class="testimonial-text">"We ordered the massive R510 Family Feast for a Sunday gathering. The amount of quality steak, chicken, and wings we got was unbelievable. Highly recommend!"</p>
+              <h4 class="testimonial-author">Thabo N.</h4>
+              <span class="testimonial-role">Family Patriarch</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Arrows -->
+        <button class="slider-nav prev" aria-label="Previous Testimonial">
+          <i data-lucide="chevron-left" style="width: 24px; height: 24px;"></i>
+        </button>
+        <button class="slider-nav next" aria-label="Next Testimonial">
+          <i data-lucide="chevron-right" style="width: 24px; height: 24px;"></i>
+        </button>
+
+        <!-- Dots -->
+        <div class="slider-dots"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Section -->
+  <section id="location">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Find Us</span>
+        <h2 class="section-title text-gradient">Locate the Smoke</h2>
+      </div>
+
+      <div class="location-wrapper reveal">
+        <div class="map-container" id="gmaps-container">
+          <!-- Embedded Google Maps Frame -->
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.2078516752044!2d28.05602737632612!3d-26.190181577085758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950c43da658515%3A0x6e2671239fbe544!2s6%20Staib%20St%2C%20New%20Doornfontein%2C%20Johannesburg%2C%202094%2C%20South%20Africa!5e0!3m2!1sen!2sus!4v1719283738091!5m2!1sen!2sus" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer">
+          </iframe>
+        </div>
+        
+        <div class="location-info">
+          <div class="location-detail-card" id="location-address">
+            <h3 class="location-detail-title">
+              <i data-lucide="map-pin" style="width: 20px; height: 20px;"></i>
+              <span>Address</span>
+            </h3>
+            <p class="location-detail-text">6 Staib Street<br>New Doornfontein<br>Johannesburg, 2094<br>South Africa</p>
+          </div>
+
+          <div class="location-detail-card" id="location-hours">
+            <h3 class="location-detail-title">
+              <i data-lucide="clock" style="width: 20px; height: 20px;"></i>
+              <span>Grill Hours</span>
+            </h3>
+            <p class="location-detail-text">Monday – Saturday: 09:00 – 21:00<br>Sunday & Holidays: 10:00 – 18:00</p>
+          </div>
+
+          <div class="location-detail-card" id="location-contact-channels">
+            <h3 class="location-detail-title">
+              <i data-lucide="phone" style="width: 20px; height: 20px;"></i>
+              <span>Hotlines</span>
+            </h3>
+            <p class="location-detail-text">Call: 068 242 8640<br>WhatsApp: 068 242 8640</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-subtitle">Get In Touch</span>
+        <h2 class="section-title text-gradient">Connect with Jack's</h2>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Card 1 -->
+        <a href="tel:0682428640" class="contact-info-card reveal" id="contact-call-card">
+          <div class="contact-card-icon">
+            <i data-lucide="phone-call" style="width: 24px; height: 24px;"></i>
+          </div>
+          <div class="contact-card-content">
+            <h4>Call to Order</h4>
+            <p>068 242 8640</p>
+          </div>
+        </a>
+        <!-- Card 2 -->
+        <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20place%20an%20order." 
+           target="_blank" 
+           referrerpolicy="no-referrer"
+           class="contact-info-card reveal reveal-delay-1" 
+           id="contact-whatsapp-card">
+          <div class="contact-card-icon">
+            <i data-lucide="message-square" style="width: 24px; height: 24px;"></i>
+          </div>
+          <div class="contact-card-content">
+            <h4>WhatsApp Chat</h4>
+            <p>068 242 8640</p>
+          </div>
+        </a>
+        <!-- Card 3 -->
+        <div class="contact-info-card reveal reveal-delay-2" id="contact-ubereats-card">
+          <div class="contact-card-icon">
+            <i data-lucide="truck" style="width: 24px; height: 24px;"></i>
+          </div>
+          <div class="contact-card-content">
+            <h4>Uber Eats Available</h4>
+            <p>Order direct to your doorstep</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="logo-container" id="footer-logo">
+            <div class="logo-icon has-image"><img src="/assets/images/logo.jpg" alt="Logo" referrerpolicy="no-referrer"></div>
+            <span class="logo-text">JACK'S <span class="text-gold">GRILL</span></span>
+          </a>
+          <p class="footer-desc">Crafting authentic flame-grilled sensory experiences in Johannesburg. Traditional recipes cooked with family love and passion.</p>
+          <div class="footer-socials">
+            <a href="https://wa.me/27682428640" class="social-icon-btn" aria-label="WhatsApp" target="_blank" referrerpolicy="no-referrer">
+              <i data-lucide="message-circle" style="width: 20px; height: 20px;"></i>
+            </a>
+            <a href="https://facebook.com" class="social-icon-btn" aria-label="Facebook" target="_blank" referrerpolicy="no-referrer">
+              <i data-lucide="facebook" style="width: 20px; height: 20px;"></i>
+            </a>
+            <a href="https://instagram.com" class="social-icon-btn" aria-label="Instagram" target="_blank" referrerpolicy="no-referrer">
+              <i data-lucide="instagram" style="width: 20px; height: 20px;"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col" id="footer-links-col">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Our Menu</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#location">Find Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col" id="footer-hours-col">
+          <h5>Grill Hours</h5>
+          <ul class="footer-hours-list">
+            <li><span class="day">Mon – Sat</span> <span>09:00 – 21:00</span></li>
+            <li><span class="day">Sunday</span> <span>10:00 – 18:00</span></li>
+            <li><span class="day">Holidays</span> <span>10:00 – 18:00</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter" id="footer-newsletter-col">
+          <h5>Subscribe</h5>
+          <p>Sign up to receive fresh sizzling deals, promo codes, and community news.</p>
+          <form class="newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Jack\'s Grill news!'); this.reset();">
+            <input type="email" class="form-control" placeholder="email@address.com" required aria-label="Email Address">
+            <button type="submit" class="newsletter-submit-btn" aria-label="Subscribe">
+              <i data-lucide="chevron-right" style="width: 20px; height: 20px;"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          &copy; 2026 Jack's Grill. All Rights Reserved. "Family, Umdeni!"
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Dynamic Buttons -->
+  <button class="cart-float" aria-label="Open Cart" id="float-cart">
+    <i data-lucide="shopping-bag" style="width: 26px; height: 26px; stroke-width: 2.2;"></i>
+    <span class="cart-count">0</span>
+  </button>
+
+  <a href="https://wa.me/27682428640?text=Hi%20Jack%27s%20Grill%2C%20I%27d%20like%20to%20place%20an%20order." 
+     class="whatsapp-float" 
+     target="_blank" 
+     referrerpolicy="no-referrer"
+     aria-label="Order on WhatsApp" 
+     id="float-whatsapp">
+    <i data-lucide="message-circle" style="width: 32px; height: 32px; stroke-width: 2.2;"></i>
+  </a>
+
+  <a href="#" class="back-to-top" aria-label="Back to Top" id="float-backtotop">
+    <i data-lucide="chevron-up" style="width: 24px; height: 24px; stroke-width: 2.5;"></i>
+  </a>
+
+  <!-- Elegant Slide-out Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay"></div>
+  <div class="cart-drawer" id="cart-drawer">
+    <div class="cart-drawer-header">
+      <div class="cart-drawer-title-wrapper">
+        <i data-lucide="shopping-bag" class="text-gold" style="width: 24px; height: 24px;"></i>
+        <h2 class="cart-drawer-title">Your Order Cart</h2>
+      </div>
+      <button class="cart-drawer-close" id="cart-drawer-close" aria-label="Close Cart">
+        <i data-lucide="x" style="width: 24px; height: 24px;"></i>
+      </button>
+    </div>
+    
+    <div class="cart-drawer-content" id="cart-items-container">
+      <!-- Cart items loaded dynamically -->
+      <div class="cart-empty-state">
+        <i data-lucide="shopping-cart" style="width: 48px; height: 48px; opacity: 0.3; margin-bottom: 1rem;"></i>
+        <p>Your cart is empty</p>
+        <span style="font-size: 0.85rem; color: rgba(255,255,255,0.5);">Browse our legendary menu and add some flame-grilled favorites!</span>
+      </div>
+    </div>
+    
+    <div class="cart-drawer-footer">
+      <!-- Customer Info fields -->
+      <div class="cart-customer-info">
+        <div class="form-group-compact">
+          <label for="cart-customer-name">Your Name (Optional)</label>
+          <input type="text" id="cart-customer-name" class="form-control-compact" placeholder="e.g. Lerato">
+        </div>
+        <div class="form-group-compact" style="margin-top: 0.5rem;">
+          <label for="cart-customer-note">Special Instructions (Optional)</label>
+          <input type="text" id="cart-customer-note" class="form-control-compact" placeholder="e.g. Extra sauce, well done">
+        </div>
+      </div>
+
+      <div class="cart-totals">
+        <div class="cart-total-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">R0.00</span>
+        </div>
+        <div class="cart-total-row total-highlight">
+          <span>Estimated Total</span>
+          <span id="cart-total">R0.00</span>
+        </div>
+      </div>
+      
+      <button class="btn btn-primary btn-checkout-whatsapp" id="btn-checkout-whatsapp" disabled>
+        <i data-lucide="message-square" style="width: 18px; height: 18px;"></i>
+        <span>Place Order on WhatsApp</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Icons CDN & Initializer -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    // Initialize Lucide icons right away
+    lucide.createIcons();
+  </script>
+  
+  <!-- Interactive script -->
+  <script src="/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jack's Grill | Admin Control Panel</title>
+  
+  <!-- Blocking Authentication Check -->
+  <script>
+    if (localStorage.getItem('jacks_grill_admin_authenticated') !== 'true') {
+      window.location.replace('/login.html');
+    }
+  </script>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/admin.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>">
+</head>
+<body class="admin-body">
+
+  <!-- Admin Shell -->
+  <div class="admin-shell">
+    
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-header">
+        <div class="logo-container">
+          <div class="logo-icon has-image"><img src="/assets/images/logo.jpg" alt="Logo" referrerpolicy="no-referrer"></div>
+          <div>
+            <span class="logo-text">JACK'S <span class="text-gold">GRILL</span></span>
+            <div class="logo-tagline">Family, Umdeni!</div>
+          </div>
+        </div>
+      </div>
+      
+      <nav class="sidebar-nav-menu">
+        <ul>
+          <li>
+            <button class="sidebar-tab-btn active" data-target="dashboard-panel">
+              <i data-lucide="layout-dashboard"></i>
+              <span>Dashboard Overview</span>
+            </button>
+          </li>
+          <li>
+            <button class="sidebar-tab-btn" data-target="menu-panel">
+              <i data-lucide="utensils"></i>
+              <span>Menu Management</span>
+            </button>
+          </li>
+          <li>
+            <button class="sidebar-tab-btn" data-target="specials-panel">
+              <i data-lucide="sparkles"></i>
+              <span>Specials & Promotions</span>
+            </button>
+          </li>
+          <li>
+            <button class="sidebar-tab-btn" data-target="business-panel">
+              <i data-lucide="settings"></i>
+              <span>Business Profile</span>
+            </button>
+          </li>
+          <li>
+            <button class="sidebar-tab-btn" data-target="homepage-panel">
+              <i data-lucide="home"></i>
+              <span>Homepage Content</span>
+            </button>
+          </li>
+          <li>
+            <button class="sidebar-tab-btn" data-target="theme-panel">
+              <i data-lucide="palette"></i>
+              <span>Theme Settings</span>
+            </button>
+          </li>
+          <li>
+            <button class="sidebar-tab-btn" data-target="security-panel">
+              <i data-lucide="shield"></i>
+              <span>Security & Login</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button id="logoutBtn" class="btn btn-secondary btn-logout">
+          <i data-lucide="log-out"></i>
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content Stage -->
+    <main class="admin-stage">
+      
+      <!-- Sticky Admin Top Header -->
+      <header class="admin-topbar glassmorphism">
+        <div class="topbar-left">
+          <h2 id="currentPanelTitle">Dashboard Overview</h2>
+          <p class="text-gold font-mono" id="currentPanelSubtitle">Real-time status of Jack's Grill</p>
+        </div>
+        <div class="topbar-right">
+          <div class="auth-status">
+            <span class="pulse-indicator"></span>
+            <span class="auth-user">Logged in as: <strong>Admin</strong></span>
+          </div>
+          <div class="global-actions">
+            <button id="resetDefaultsBtn" class="btn btn-secondary">
+              <i data-lucide="refresh-cw"></i>
+              <span>Reset Defaults</span>
+            </button>
+            <button id="saveGlobalBtn" class="btn btn-primary">
+              <i data-lucide="save"></i>
+              <span>Publish Live</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Panel Wrapper -->
+      <div class="panels-container">
+
+        <!-- 1. DASHBOARD OVERVIEW PANEL -->
+        <section id="dashboard-panel" class="admin-panel active">
+          <div class="dashboard-stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon"><i data-lucide="utensils-crosses"></i></div>
+              <div class="stat-data">
+                <span class="stat-label">Total Menu Items</span>
+                <span class="stat-value" id="stat-total-items">17</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon text-gold"><i data-lucide="award"></i></div>
+              <div class="stat-data">
+                <span class="stat-label">Best Sellers</span>
+                <span class="stat-value text-gold" id="stat-best-sellers">4</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon text-red"><i data-lucide="alert-triangle"></i></div>
+              <div class="stat-data">
+                <span class="stat-label">Sold Out Items</span>
+                <span class="stat-value text-red" id="stat-sold-out">0</span>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon text-green"><i data-lucide="phone"></i></div>
+              <div class="stat-data">
+                <span class="stat-label">Order Hotlines</span>
+                <span class="stat-value text-green" id="stat-hotline">Active</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-row">
+            <!-- Quick Actions -->
+            <div class="admin-col col-1-2">
+              <div class="admin-card">
+                <h3 class="card-title"><i data-lucide="bolt" class="text-gold"></i> Quick Actions</h3>
+                <div class="quick-actions-grid">
+                  <button class="quick-act-btn" id="quickAddMenuBtn">
+                    <i data-lucide="plus-circle"></i>
+                    <span>Add New Dish</span>
+                  </button>
+                  <button class="quick-act-btn" id="quickViewSiteBtn">
+                    <i data-lucide="external-link"></i>
+                    <span>View Live Website</span>
+                  </button>
+                  <button class="quick-act-btn" id="quickEditHoursBtn">
+                    <i data-lucide="clock"></i>
+                    <span>Update Hours</span>
+                  </button>
+                  <button class="quick-act-btn" id="quickThemeBtn">
+                    <i data-lucide="paint-brush"></i>
+                    <span>Tweak Theme Colors</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sync Status -->
+            <div class="admin-col col-1-2">
+              <div class="admin-card">
+                <h3 class="card-title"><i data-lucide="server" class="text-gold"></i> Persistence Engine</h3>
+                <div class="persistence-status">
+                  <div class="storage-meter-wrapper">
+                    <div class="storage-text">
+                      <span>LocalStorage Allocation</span>
+                      <strong id="storage-percentage">0.1%</strong>
+                    </div>
+                    <div class="storage-bar">
+                      <div class="storage-bar-fill" id="storage-bar-fill" style="width: 1%;"></div>
+                    </div>
+                  </div>
+                  <ul class="storage-details-list">
+                    <li>
+                      <i data-lucide="check-circle-2" class="text-green"></i>
+                      <span>All updates automatically synchronize locally.</span>
+                    </li>
+                    <li>
+                      <i data-lucide="check-circle-2" class="text-green"></i>
+                      <span>No database files required — works instantly on Live Server.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. MENU MANAGEMENT PANEL -->
+        <section id="menu-panel" class="admin-panel">
+          <div class="panel-actions-bar">
+            <div class="search-box-wrapper">
+              <i data-lucide="search" class="search-box-icon"></i>
+              <input type="text" id="menuSearchInput" class="form-control" placeholder="Filter menu items...">
+            </div>
+            <button id="addMenuItemBtn" class="btn btn-primary">
+              <i data-lucide="plus"></i>
+              <span>Add Menu Item</span>
+            </button>
+          </div>
+
+          <div class="admin-card table-card">
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Dish Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Best Seller</th>
+                    <th>Status</th>
+                    <th style="text-align: right;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="menuItemsTableBody">
+                  <!-- Generated Dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. BUSINESS PROFILE PANEL -->
+        <section id="business-panel" class="admin-panel">
+          <div class="admin-row">
+            <div class="admin-col col-2-3">
+              <div class="admin-card">
+                <h3 class="card-title"><i data-lucide="building" class="text-gold"></i> Store Details</h3>
+                <form id="businessProfileForm">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="bizName">Restaurant Name</label>
+                      <input type="text" id="bizName" class="form-control" placeholder="Jack's Grill">
+                    </div>
+                    <div class="form-group">
+                      <label for="bizTagline">Tagline / Motto</label>
+                      <input type="text" id="bizTagline" class="form-control" placeholder="Family, Umdeni!">
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="bizPhone">Order Phone Number</label>
+                      <input type="text" id="bizPhone" class="form-control" placeholder="068 242 8640">
+                    </div>
+                    <div class="form-group">
+                      <label for="bizWhatsapp">WhatsApp Order Number</label>
+                      <input type="text" id="bizWhatsapp" class="form-control" placeholder="068 242 8640">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="bizAddress">Address Location</label>
+                    <input type="text" id="bizAddress" class="form-control" placeholder="6 Staib Street, New Doornfontein, Johannesburg">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="bizHours">Grill Business Hours</label>
+                    <textarea id="bizHours" class="form-control" placeholder="Monday – Saturday: 09:00 – 21:00&#10;Sunday & Holidays: 10:00 – 18:00" style="min-height: 100px;"></textarea>
+                  </div>
+
+                  <h3 class="card-title" style="margin-top: 3rem;"><i data-lucide="share-2" class="text-gold"></i> Delivery & Social Portals</h3>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="bizUberEats">Uber Eats Link (Optional)</label>
+                      <input type="url" id="bizUberEats" class="form-control" placeholder="https://ubereats.com/store/...">
+                    </div>
+                    <div class="form-group">
+                      <label for="bizFacebook">Facebook URL</label>
+                      <input type="url" id="bizFacebook" class="form-control" placeholder="https://facebook.com/jacksgrill">
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="bizInstagram">Instagram URL</label>
+                      <input type="url" id="bizInstagram" class="form-control" placeholder="https://instagram.com/jacksgrill">
+                    </div>
+                    <div class="form-group">
+                      <label for="bizTwitter">Twitter/X URL (Optional)</label>
+                      <input type="url" id="bizTwitter" class="form-control" placeholder="https://x.com/jacksgrill">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Info Box -->
+            <div class="admin-col col-1-3">
+              <div class="admin-card warning-card">
+                <h4 class="info-title"><i data-lucide="shield-check" class="text-gold"></i> Dynamic Binding</h4>
+                <p>Updating these details modifies all matching footers, contact sheets, order hotlines, and WhatsApp link generators dynamically on the main website.</p>
+                <p style="margin-top: 1rem;">Click <strong>Publish Live</strong> in the top header after modifying to commit files instantly.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. HOMEPAGE CONTENT PANEL -->
+        <section id="homepage-panel" class="admin-panel">
+          <div class="admin-row">
+            <div class="admin-col col-2-3">
+              
+              <!-- Hero Content Card -->
+              <div class="admin-card" style="margin-bottom: 2.5rem;">
+                <h3 class="card-title"><i data-lucide="sparkles" class="text-gold"></i> Hero Section Settings</h3>
+                <div class="form-group">
+                  <label for="homeHeroTitle">Hero Title (HTML supported for gradients)</label>
+                  <input type="text" id="homeHeroTitle" class="form-control" placeholder="JACK'S <span class='text-gradient'>GRILL</span>">
+                  <small class="form-tip">Wrap text in &lt;span class="text-gradient"&gt;TEXT&lt;/span&gt; for the premium gold-fade look.</small>
+                </div>
+                <div class="form-group">
+                  <label for="homeHeroSubtitle">Hero Subtitle</label>
+                  <input type="text" id="homeHeroSubtitle" class="form-control" placeholder="Family, Umdeni!">
+                </div>
+              </div>
+
+              <!-- About Section Content -->
+              <div class="admin-card" style="margin-bottom: 2.5rem;">
+                <h3 class="card-title"><i data-lucide="book-open" class="text-gold"></i> About Us (Our Heritage)</h3>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="homeAboutTitle">About Title</label>
+                    <input type="text" id="homeAboutTitle" class="form-control" placeholder="Where Family & Flavor Sizzle Together">
+                  </div>
+                  <div class="form-group">
+                    <label for="homeAboutTagline">About Tagline</label>
+                    <input type="text" id="homeAboutTagline" class="form-control" placeholder="&quot;Family, Umdeni!&quot;">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="homeAboutText1">Paragraph 1</label>
+                  <textarea id="homeAboutText1" class="form-control" style="min-height: 100px;"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="homeAboutText2">Paragraph 2</label>
+                  <textarea id="homeAboutText2" class="form-control" style="min-height: 100px;"></textarea>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="homeAboutStatsNum">Floating Badge Stat</label>
+                    <input type="text" id="homeAboutStatsNum" class="form-control" placeholder="100%">
+                  </div>
+                  <div class="form-group">
+                    <label for="homeAboutStatsLabel">Floating Badge Label</label>
+                    <input type="text" id="homeAboutStatsLabel" class="form-control" placeholder="Flame Grilled Taste">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="homeAboutStatsDesc">Floating Badge Description</label>
+                  <input type="text" id="homeAboutStatsDesc" class="form-control" placeholder="Traditional wood and coal grill techniques handed down through generations.">
+                </div>
+              </div>
+
+              <!-- Testimonial Management -->
+              <div class="admin-card" style="margin-bottom: 2.5rem;">
+                <div class="card-header-with-btn">
+                  <h3 class="card-title"><i data-lucide="message-square-heart" class="text-gold"></i> Testimonials</h3>
+                  <button id="addTestimonialBtn" class="btn btn-secondary btn-sm" type="button">
+                    <i data-lucide="plus"></i> Add Review
+                  </button>
+                </div>
+                <div class="testimonials-admin-list" id="testimonialsListContainer">
+                  <!-- Dynamically populated -->
+                </div>
+              </div>
+
+              <!-- Gallery Management -->
+              <div class="admin-card">
+                <h3 class="card-title"><i data-lucide="images" class="text-gold"></i> Gallery Overlays & Spotlights</h3>
+                <div class="gallery-admin-grid" id="galleryManagerGrid">
+                  <!-- Dynamically generated 6 spots -->
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Info Pane -->
+            <div class="admin-col col-1-3">
+              <div class="admin-card warning-card">
+                <h4 class="info-title"><i data-lucide="info" class="text-gold"></i> Customizing Images</h4>
+                <p>The standard system renders gorgeous high-definition culinary items. You can easily modify gallery images or main pictures in the gallery module using image paths or any Base64 strings.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. THEME SETTINGS PANEL -->
+        <section id="theme-panel" class="admin-panel">
+          <div class="admin-row">
+            <div class="admin-col col-2-3">
+              <div class="admin-card">
+                <h3 class="card-title"><i data-lucide="paint-bucket" class="text-gold"></i> Design & Palette Customization</h3>
+                
+                <!-- Color Overrides -->
+                <h4 class="form-section-title">Brand Identity Colors</h4>
+                <div class="form-row color-inputs-grid">
+                  <div class="form-group">
+                    <label for="themePrimaryColor">Primary Gold Color</label>
+                    <div class="color-picker-wrapper">
+                      <input type="color" id="themePrimaryColorPicker" class="color-picker-box" value="#D8A234">
+                      <input type="text" id="themePrimaryColor" class="form-control" placeholder="#D8A234">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="themeSecondaryColor">Accent Orange Color</label>
+                    <div class="color-picker-wrapper">
+                      <input type="color" id="themeSecondaryColorPicker" class="color-picker-box" value="#F59E0B">
+                      <input type="text" id="themeSecondaryColor" class="form-control" placeholder="#F59E0B">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="themeButtonColor">Primary Button Color</label>
+                    <div class="color-picker-wrapper">
+                      <input type="color" id="themeButtonColorPicker" class="color-picker-box" value="#D8A234">
+                      <input type="text" id="themeButtonColor" class="form-control" placeholder="#D8A234">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Font Override -->
+                <h4 class="form-section-title" style="margin-top: 2.5rem;">Typography Set</h4>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="themeFontFamily">Primary Sans-Serif Font</label>
+                    <select id="themeFontFamily" class="form-control">
+                      <option value="Outfit">Outfit (Default Modern Tech)</option>
+                      <option value="Inter">Inter (Swiss Clean UI)</option>
+                      <option value="Space Grotesk">Space Grotesk (Tech Editorial)</option>
+                      <option value="Playfair Display">Playfair Display (Editorial Serif)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="themeFavicon">Favicon Emoji Accent</label>
+                    <select id="themeFavicon" class="form-control">
+                      <option value="🔥">🔥 Hot Flame</option>
+                      <option value="🥩">🥩 Grilled Steak</option>
+                      <option value="🍔">🍔 Burger</option>
+                      <option value="🍗">🍗 Drumstick</option>
+                      <option value="👑">👑 Crown</option>
+                      <option value="🛠️">🛠️ Tools</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Brand Logo Options -->
+                <h4 class="form-section-title" style="margin-top: 2.5rem;">Company Logo Branding</h4>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="themeLogoMode">Logo Icon Style</label>
+                    <select id="themeLogoMode" class="form-control">
+                      <option value="image">Custom Image/Monogram</option>
+                      <option value="text">Classic Text Letter</option>
+                    </select>
+                  </div>
+                  <div class="form-group" id="logoTextLetterGroup">
+                    <label for="themeLogoLetter">Logo Single Letter (Text Mode)</label>
+                    <input type="text" id="themeLogoLetter" class="form-control" placeholder="J" maxlength="1">
+                  </div>
+                  <div class="form-group">
+                    <label for="themeLogoText">Logo Name Overlay (HTML allowed)</label>
+                    <input type="text" id="themeLogoText" class="form-control" placeholder="JACK'S <span class='text-gold'>GRILL</span>">
+                  </div>
+                </div>
+
+                <!-- Logo Image Uploader Wrapper -->
+                <div class="form-group" id="logoImageUploaderGroup" style="margin-top: 1rem;">
+                  <label>Logo Monogram Asset</label>
+                  <div class="image-source-tabs" style="margin-bottom: 0.5rem;">
+                    <button type="button" class="img-src-tabactive" id="logoBtnSourceUpload">Upload Image File</button>
+                    <button type="button" id="logoBtnSourceUrl">Use Web URL / Preset</button>
+                  </div>
+                  
+                  <!-- File Uploader -->
+                  <div id="logoImgSourceUploadWrapper" class="img-sub-container">
+                    <div class="drag-drop-zone" id="logoDragDropArea" style="padding: 1.5rem; text-align: center;">
+                      <i data-lucide="upload-cloud" class="upload-icon" style="width: 28px; height: 28px; margin-bottom: 0.5rem;"></i>
+                      <p style="font-size: 0.85rem;">Drag & drop logo or <span class="text-gold">click to browse</span></p>
+                      <input type="file" id="themeLogoImageFile" accept="image/*" class="hidden-file-input" style="display: none;">
+                    </div>
+                  </div>
+                  
+                  <!-- Direct URL -->
+                  <div id="logoImgSourceUrlWrapper" class="img-sub-container hidden">
+                    <input type="text" id="themeLogoImageUrl" class="form-control" placeholder="/assets/images/logo.jpg or custom web URL">
+                    <div class="preset-suggestions" style="margin-top: 0.5rem;">
+                      <span class="preset-lbl" style="font-size: 0.75rem;">Default:</span>
+                      <button type="button" class="preset-tag" id="logoPresetDefaultBtn" data-url="/assets/images/logo.jpg" style="font-size: 0.75rem; padding: 0.15rem 0.4rem;">Polished Monogram JG</button>
+                    </div>
+                  </div>
+
+                  <!-- Image Preview Frame -->
+                  <div class="modal-image-preview-wrapper" style="margin-top: 0.75rem; max-width: 150px;">
+                    <img id="themeLogoImagePreview" src="/assets/images/logo.jpg" alt="Selected Logo Preview" style="max-height: 100px; object-fit: contain;">
+                    <button type="button" class="btn-clear-image" id="logoBtnClearImage" title="Reset to default logo" style="top: 2px; right: 2px; padding: 4px;">
+                      <i data-lucide="rotate-ccw" style="width: 14px; height: 14px;"></i>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Preview panel -->
+            <div class="admin-col col-1-3">
+              <div class="admin-card visual-preview-card">
+                <h4 class="info-title"><i data-lucide="eye" class="text-gold"></i> Live Palette Guide</h4>
+                <p style="margin-bottom: 2rem;">Colors chosen here apply directly to the website CSS variables on reload.</p>
+                <div class="preview-swatch-box">
+                  <div class="swatch-item">
+                    <span class="swatch-lbl">Primary Color</span>
+                    <div class="swatch-circle" id="prev-swatch-prim" style="background-color: #D8A234;"></div>
+                  </div>
+                  <div class="swatch-item">
+                    <span class="swatch-lbl">Accent Color</span>
+                    <div class="swatch-circle" id="prev-swatch-sec" style="background-color: #F59E0B;"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. SPECIALS & PROMOTIONS PANEL -->
+        <section id="specials-panel" class="admin-panel">
+          <div class="admin-row">
+            <div class="admin-col col-1-3">
+              <div class="admin-card">
+                <h3 class="card-title"><i data-lucide="plus" class="text-gold"></i> Create New Special</h3>
+                <form id="addSpecialForm" style="margin-top: 1rem;">
+                  <div class="form-group">
+                    <label for="specialMenuSelect">Load from Menu Item (Optional)</label>
+                    <select id="specialMenuSelect" class="form-control">
+                      <option value="">-- Choose a dish (Optional) --</option>
+                      <!-- Populated dynamically with menu items -->
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="specialName">Promo Title / Dish Name</label>
+                    <input type="text" id="specialName" class="form-control" placeholder="e.g. Kasi Kota Special" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="specialPrice">Special Sale Price</label>
+                    <input type="text" id="specialPrice" class="form-control" placeholder="e.g. R40" required>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="specialCatchy">Catchy Line / Slogan</label>
+                    <input type="text" id="specialCatchy" class="form-control" placeholder="e.g. Flame-grilled & loaded with extra cheese!" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="specialImage">Image URL / Path</label>
+                    <input type="text" id="specialImage" class="form-control" placeholder="e.g. /assets/images/kasi_kota.jpg">
+                  </div>
+                  
+                  <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                    <i data-lucide="sparkles" style="width: 18px; height: 18px;"></i>
+                    <span>Create Special Promo</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <div class="admin-col col-2-3">
+              <div class="admin-card">
+                <h3 class="card-title"><i data-lucide="sparkles" class="text-gold"></i> Active Specials & Promotions</h3>
+                <p style="margin-bottom: 1.5rem; color: var(--light-grey);">These specials will trigger a beautiful automatic pop-up on the customer-facing website to drive immediate attention and order clicks.</p>
+                
+                <div class="table-responsive">
+                  <table class="admin-table">
+                    <thead>
+                      <tr>
+                        <th>Image</th>
+                        <th>Promo Item</th>
+                        <th>Sale Price</th>
+                        <th>Catchy slogan</th>
+                        <th style="text-align: right;">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="specialsTableBody">
+                      <!-- Populated dynamically -->
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. SECURITY & LOGIN PANEL -->
+        <section id="security-panel" class="admin-panel">
+          <div class="admin-row">
+            <div class="admin-col col-2-3">
+              <div class="admin-card">
+                <h3 class="card-title"><i data-lucide="shield" class="text-gold"></i> Admin Login Credentials</h3>
+                <p style="margin-bottom: 1.5rem; color: var(--light-grey);">Update the administrator credentials used to access this control station.</p>
+                
+                <form id="updateCredentialsForm">
+                  <div class="form-group">
+                    <label for="adminUsernameInput">Administrator Username</label>
+                    <input type="text" id="adminUsernameInput" class="form-control" placeholder="admin" required>
+                    <span class="help-text" style="font-size: 0.8rem; color: var(--light-grey); margin-top: 0.25rem; display: block;">The username you'll use to sign in next time.</span>
+                  </div>
+
+                  <div class="form-row" style="margin-top: 1.5rem;">
+                    <div class="form-group">
+                      <label for="adminCurrentPasswordInput">Current Password</label>
+                      <input type="password" id="adminCurrentPasswordInput" class="form-control" placeholder="••••••••" required>
+                    </div>
+                  </div>
+
+                  <div class="form-row" style="margin-top: 1.5rem;">
+                    <div class="form-group">
+                      <label for="adminNewPasswordInput">New Password</label>
+                      <input type="password" id="adminNewPasswordInput" class="form-control" placeholder="Minimum 6 characters recommended">
+                    </div>
+                    <div class="form-group">
+                      <label for="adminConfirmPasswordInput">Confirm New Password</label>
+                      <input type="password" id="adminConfirmPasswordInput" class="form-control" placeholder="Confirm new password">
+                    </div>
+                  </div>
+
+                  <div class="form-actions" style="margin-top: 2rem; display: flex; justify-content: flex-end;">
+                    <button type="submit" class="btn btn-primary" style="display: flex; align-items: center; gap: 0.5rem;">
+                      <i data-lucide="save"></i>
+                      <span>Update Credentials</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="admin-col col-1-3">
+              <div class="admin-card">
+                <h4 class="info-title"><i data-lucide="info" class="text-gold"></i> Security Tips</h4>
+                <ul style="padding-left: 1.2rem; color: var(--light-grey); font-size: 0.9rem; line-height: 1.6; margin-top: 1rem;">
+                  <li>Do not share these credentials with anyone.</li>
+                  <li>Use a strong password combining uppercase, lowercase, numbers, and symbols.</li>
+                  <li>If you ever forget your password, you can reset to default settings from the bottom of other panels.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- MENU ITEM FORM DIALOG MODAL (Add & Edit) -->
+  <div id="menuItemModal" class="admin-modal">
+    <div class="admin-modal-content glassmorphism">
+      <div class="modal-header">
+        <h3 id="modalTitle">Add New Dish</h3>
+        <button id="closeModalBtn" class="modal-close-btn">&times;</button>
+      </div>
+      <form id="menuItemForm">
+        <input type="hidden" id="menuItemIndex">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="menuItemName">Dish Name</label>
+            <input type="text" id="menuItemName" class="form-control" placeholder="E.g. Tender T-Bone Steak" required>
+          </div>
+          <div class="form-group">
+            <label for="menuItemPrice">Price (Rands)</label>
+            <input type="text" id="menuItemPrice" class="form-control" placeholder="E.g. R95 or R20 / R45" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="menuItemCategory">Category Block</label>
+            <select id="menuItemCategory" class="form-control" required>
+              <option value="mains">Main Meals</option>
+              <option value="bunnies">Bunny Chows & Kotas</option>
+              <option value="wings">Crispy Wings</option>
+              <option value="platters">Family Platas</option>
+              <option value="fries">Fries & Combos</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="menuItemBadge">Custom Tag Overlay (E.g., "Best Seller")</label>
+            <input type="text" id="menuItemBadge" class="form-control" placeholder="Leave empty for none">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="menuItemDescription">Description Details</label>
+          <textarea id="menuItemDescription" class="form-control" style="min-height: 80px;" placeholder="Describe ingredients, cooking styles, size portions..." required></textarea>
+        </div>
+
+        <!-- Custom Image Uploader & Preset Picker -->
+        <div class="form-group">
+          <label>Food Image Asset</label>
+          <div class="image-source-tabs">
+            <button type="button" class="img-src-tabactive" id="btnSourceUpload">Upload Image File</button>
+            <button type="button" id="btnSourceUrl">Use Web URL / Preset</button>
+          </div>
+          
+          <!-- File Uploader -->
+          <div id="imgSourceUploadWrapper" class="img-sub-container">
+            <div class="drag-drop-zone" id="dragDropArea">
+              <i data-lucide="upload-cloud" class="upload-icon"></i>
+              <p>Drag & drop or <span class="text-gold">click to browse</span></p>
+              <input type="file" id="menuItemImageFile" accept="image/*" class="hidden-file-input">
+            </div>
+          </div>
+          
+          <!-- Direct URL / Preset -->
+          <div id="imgSourceUrlWrapper" class="img-sub-container hidden">
+            <input type="text" id="menuItemImageUrl" class="form-control" placeholder="https://images.unsplash.com/... or choose preset below">
+            <div class="preset-suggestions">
+              <span class="preset-lbl">Presets:</span>
+              <button type="button" class="preset-tag" data-url="/assets/images/beef_stew.jpg">Stew</button>
+              <button type="button" class="preset-tag" data-url="/assets/images/hero_grill.jpg">Grill</button>
+              <button type="button" class="preset-tag" data-url="/assets/images/kasi_kota.jpg">Kota</button>
+              <button type="button" class="preset-tag" data-url="/assets/images/bbq_wings.jpg">Wings</button>
+              <button type="button" class="preset-tag" data-url="/assets/images/mince_bunny.jpg">Bunny Chow</button>
+              <button type="button" class="preset-tag" data-url="/assets/images/meat_platter.jpg">Platter</button>
+            </div>
+          </div>
+
+          <!-- Image Preview Frame -->
+          <div class="modal-image-preview-wrapper">
+            <img id="modalImagePreview" src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect width=%22100%22 height=%22100%22 fill=%22%23222%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23666%22>Preview</text></svg>" alt="Selected Dish Preview">
+            <button type="button" class="btn-clear-image" id="btnClearImage" title="Delete Food Image">
+              <i data-lucide="trash-2"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-row" style="margin-top: 2rem;">
+          <div class="form-group checkbox-row">
+            <label class="toggle-checkbox-wrapper">
+              <input type="checkbox" id="menuItemIsBestSeller">
+              <span class="custom-toggle"></span>
+              <span>Mark as Best Seller</span>
+            </label>
+          </div>
+          <div class="form-group checkbox-row">
+            <label class="toggle-checkbox-wrapper">
+              <input type="checkbox" id="menuItemIsSoldOut">
+              <span class="custom-toggle"></span>
+              <span>Mark as Sold Out</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="modal-buttons">
+          <button type="button" class="btn btn-secondary" id="cancelModalBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="saveModalItemBtn">Save Item</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TESTIMONIAL FORM DIALOG MODAL (Add & Edit) -->
+  <div id="testimonialModal" class="admin-modal">
+    <div class="admin-modal-content glassmorphism" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3 id="tModalTitle">Add Customer Review</h3>
+        <button id="closeTModalBtn" class="modal-close-btn">&times;</button>
+      </div>
+      <form id="testimonialForm">
+        <input type="hidden" id="testimonialIndex">
+        
+        <div class="form-group">
+          <label for="tAuthor">Author Name</label>
+          <input type="text" id="tAuthor" class="form-control" placeholder="E.g. Lerato M." required>
+        </div>
+
+        <div class="form-group">
+          <label for="tRole">Role / Label</label>
+          <input type="text" id="tRole" class="form-control" placeholder="E.g. Local Resident" required>
+        </div>
+
+        <div class="form-group">
+          <label for="tStars">Star Rating</label>
+          <select id="tStars" class="form-control" required>
+            <option value="5">⭐⭐⭐⭐⭐ 5 Stars</option>
+            <option value="4">⭐⭐⭐⭐ 4 Stars</option>
+            <option value="3">⭐⭐⭐ 3 Stars</option>
+            <option value="2">⭐⭐ 2 Stars</option>
+            <option value="1">⭐ 1 Star</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="tText">Review Content</label>
+          <textarea id="tText" class="form-control" style="min-height: 100px;" placeholder="Write their direct feedback here..." required></textarea>
+        </div>
+
+        <div class="modal-buttons">
+          <button type="button" class="btn btn-secondary" id="cancelTModalBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Review</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION POPUP -->
+  <div id="adminToast" class="admin-toast">
+    <i data-lucide="check-circle" class="toast-icon"></i>
+    <span id="toastMessage">Changes Saved Successfully!</span>
+  </div>
+
+  <!-- Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    // Initial loading of top-level lucide icons
+    lucide.createIcons();
+  </script>
+  
+  <script src="/admin.js"></script>
+</body>
+</html>
