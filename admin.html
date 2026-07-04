@@ -8,7 +8,7 @@
   <!-- Blocking Authentication Check -->
   <script>
     if (localStorage.getItem('jacks_grill_admin_authenticated') !== 'true') {
-      window.location.replace('/login.html');
+      window.location.replace('login.html');
     }
   </script>
 
@@ -513,10 +513,10 @@
                   
                   <!-- Direct URL -->
                   <div id="logoImgSourceUrlWrapper" class="img-sub-container hidden">
-                    <input type="text" id="themeLogoImageUrl" class="form-control" placeholder="/assets/images/logo.jpg or custom web URL">
+                    <input type="text" id="themeLogoImageUrl" class="form-control" placeholder="assets/images/logo.jpg or custom web URL">
                     <div class="preset-suggestions" style="margin-top: 0.5rem;">
                       <span class="preset-lbl" style="font-size: 0.75rem;">Default:</span>
-                      <button type="button" class="preset-tag" id="logoPresetDefaultBtn" data-url="/assets/images/logo.jpg" style="font-size: 0.75rem; padding: 0.15rem 0.4rem;">Polished Monogram JG</button>
+                      <button type="button" class="preset-tag" id="logoPresetDefaultBtn" data-url="assets/images/logo.jpg" style="font-size: 0.75rem; padding: 0.15rem 0.4rem;">Polished Monogram JG</button>
                     </div>
                   </div>
 
@@ -584,7 +584,7 @@
 
                   <div class="form-group">
                     <label for="specialImage">Image URL / Path</label>
-                    <input type="text" id="specialImage" class="form-control" placeholder="e.g. /assets/images/kasi_kota.jpg">
+                    <input type="text" id="specialImage" class="form-control" placeholder="e.g. assets/images/kasi_kota.jpg">
                   </div>
                   
                   <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
@@ -746,12 +746,12 @@
             <input type="text" id="menuItemImageUrl" class="form-control" placeholder="https://images.unsplash.com/... or choose preset below">
             <div class="preset-suggestions">
               <span class="preset-lbl">Presets:</span>
-              <button type="button" class="preset-tag" data-url="/assets/images/beef_stew.jpg">Stew</button>
-              <button type="button" class="preset-tag" data-url="/assets/images/hero_grill.jpg">Grill</button>
-              <button type="button" class="preset-tag" data-url="/assets/images/kasi_kota.jpg">Kota</button>
-              <button type="button" class="preset-tag" data-url="/assets/images/bbq_wings.jpg">Wings</button>
-              <button type="button" class="preset-tag" data-url="/assets/images/mince_bunny.jpg">Bunny Chow</button>
-              <button type="button" class="preset-tag" data-url="/assets/images/meat_platter.jpg">Platter</button>
+              <button type="button" class="preset-tag" data-url="assets/images/beef_stew.jpg">Stew</button>
+              <button type="button" class="preset-tag" data-url="assets/images/hero_grill.jpg">Grill</button>
+              <button type="button" class="preset-tag" data-url="assets/images/kasi_kota.jpg">Kota</button>
+              <button type="button" class="preset-tag" data-url="assets/images/bbq_wings.jpg">Wings</button>
+              <button type="button" class="preset-tag" data-url="assets/images/mince_bunny.jpg">Bunny Chow</button>
+              <button type="button" class="preset-tag" data-url="assets/images/meat_platter.jpg">Platter</button>
             </div>
           </div>
 

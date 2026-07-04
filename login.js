@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('jacks_grill_auth_timestamp', Date.now().toString());
       
       // Redirect to admin dashboard
-      window.location.href = '/admin.html';
+      window.location.href = 'admin.html';
     } else {
       // Display failure notice
       errorMsg.style.display = 'flex';

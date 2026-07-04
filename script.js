@@ -472,7 +472,7 @@ function bindDynamicData() {
       // Brand Logo Mode and Content
       if (t.logoMode === 'image' && t.logoImage) {
         document.querySelectorAll('.logo-icon').forEach(el => {
-          el.innerHTML = `<img src="${t.logoImage}" alt="Logo" referrerpolicy="no-referrer" onerror="this.src='/assets/images/logo.jpg'">`;
+          el.innerHTML = `<img src="${t.logoImage}" alt="Logo" referrerpolicy="no-referrer" onerror="this.src='assets/images/logo.jpg'">`;
           el.classList.add('has-image');
         });
       } else {
@@ -704,7 +704,7 @@ function bindDynamicData() {
           return `
             <div class="menu-card reveal" data-category="${item.category}" id="menu-item-dyn-${idx}">
               <div class="menu-img-wrapper">
-                <img src="${item.image || '/assets/images/beef_stew.jpg'}" alt="${item.name}" class="menu-img" referrerpolicy="no-referrer" onerror="this.src='/assets/images/beef_stew.jpg'">
+                <img src="${item.image || 'assets/images/beef_stew.jpg'}" alt="${item.name}" class="menu-img" referrerpolicy="no-referrer" onerror="this.src='assets/images/beef_stew.jpg'">
                 ${badgeHTML}
               </div>
               <div class="menu-details">
@@ -879,7 +879,7 @@ function addToCart(name, price, image) {
     cart.push({
       name: name,
       price: price,
-      image: image || '/assets/images/beef_stew.jpg',
+      image: image || 'assets/images/beef_stew.jpg',
       quantity: 1
     });
   }
@@ -974,7 +974,7 @@ function renderCartItems() {
 
   container.innerHTML = cart.map(item => `
     <div class="cart-item-card">
-      <img src="${item.image}" alt="${item.name}" class="cart-item-img" onerror="this.src='/assets/images/beef_stew.jpg'">
+      <img src="${item.image}" alt="${item.name}" class="cart-item-img" onerror="this.src='assets/images/beef_stew.jpg'">
       <div class="cart-item-details">
         <h4 class="cart-item-name">${item.name}</h4>
         <span class="cart-item-price">R${item.price.toFixed(2)}</span>
@@ -1107,7 +1107,7 @@ function initSpecialsPopup() {
         name: "Kasi Kota & Fries Special",
         price: "R40.00",
         catchy: "Get our legendary quarter loaded kota for R5 less today!",
-        image: "/assets/images/kasi_kota.jpg"
+        image: "assets/images/kasi_kota.jpg"
       }
     ];
   }
@@ -1122,7 +1122,7 @@ function initSpecialsPopup() {
     <div class="specials-popup-badge">🔥 TODAY'S HOT SPECIAL</div>
     <div class="specials-popup-body">
       <div class="specials-popup-img-wrapper">
-        <img id="specials-popup-img" src="" alt="Promo item" onerror="this.src='/assets/images/meat_platter.jpg'">
+        <img id="specials-popup-img" src="" alt="Promo item" onerror="this.src='assets/images/meat_platter.jpg'">
       </div>
       <div class="specials-popup-info">
         <h4 id="specials-popup-name">Loading...</h4>
@@ -1163,7 +1163,7 @@ function initSpecialsPopup() {
     const catchyEl = document.getElementById('specials-popup-catchy');
     const addBtn = document.getElementById('specials-popup-add-btn');
 
-    if (imgEl) imgEl.src = special.image || '/assets/images/meat_platter.jpg';
+    if (imgEl) imgEl.src = special.image || 'assets/images/meat_platter.jpg';
     if (nameEl) nameEl.textContent = special.name;
     if (priceEl) priceEl.textContent = special.price;
     if (catchyEl) catchyEl.textContent = special.catchy;

@@ -5,7 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Guard clause for authentication
   if (localStorage.getItem('jacks_grill_admin_authenticated') !== 'true') {
-    window.location.replace('/login.html');
+    window.location.replace('login.html');
     return;
   }
 
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       fontFamily: "Outfit",
       faviconEmoji: "🔥",
       logoMode: "image",
-      logoImage: "/assets/images/logo.jpg"
+      logoImage: "assets/images/logo.jpg"
     },
     homepage: {
       heroTitle: "JACK'S <span class=\"text-gradient\">GRILL</span>",
@@ -45,12 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
       aboutStatsLabel: "Flame Grilled Taste",
       aboutStatsDesc: "Traditional wood and coal grill techniques handed down through generations.",
       gallery: [
-        { image: "/assets/images/hero_grill.jpg", category: "The Hearth", title: "Live Coal Flame-Grill" },
-        { image: "/assets/images/beef_stew.jpg", category: "Mains", title: "Tender Slow Stew" },
-        { image: "/assets/images/kasi_kota.jpg", category: "Local Specialties", title: "Ultimate Loaded Kota" },
-        { image: "/assets/images/mince_bunny.jpg", category: "Street Food", title: "Mince Bunny Chow" },
-        { image: "/assets/images/meat_platter.jpg", category: "Platas", title: "Steak + Chicken + Wors" },
-        { image: "/assets/images/bbq_wings.jpg", category: "Sides", title: "Wings & Shaker Fries" }
+        { image: "assets/images/hero_grill.jpg", category: "The Hearth", title: "Live Coal Flame-Grill" },
+        { image: "assets/images/beef_stew.jpg", category: "Mains", title: "Tender Slow Stew" },
+        { image: "assets/images/kasi_kota.jpg", category: "Local Specialties", title: "Ultimate Loaded Kota" },
+        { image: "assets/images/mince_bunny.jpg", category: "Street Food", title: "Mince Bunny Chow" },
+        { image: "assets/images/meat_platter.jpg", category: "Platas", title: "Steak + Chicken + Wors" },
+        { image: "assets/images/bbq_wings.jpg", category: "Sides", title: "Wings & Shaker Fries" }
       ]
     },
     testimonials: [
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "mains",
         price: "R70",
         description: "Hearty, slow-simmered premium beef chunks in a thick, savory gravy. Served with Pap, Rice, or Samp.",
-        image: "/assets/images/beef_stew.jpg",
+        image: "assets/images/beef_stew.jpg",
         isBestSeller: true,
         isSoldOut: false,
         badge: "Best Seller"
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "mains",
         price: "R70",
         description: "Sizzling flame-grilled half-chicken basted in Jack's signature smoky BBQ. Served with Pap, Rice, or Samp.",
-        image: "/assets/images/hero_grill.jpg",
+        image: "assets/images/hero_grill.jpg",
         isBestSeller: false,
         isSoldOut: false,
         badge: "Hot off Coals"
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "mains",
         price: "R70",
         description: "Double helpings of authentic, thick South African boerewors grilled over coals. Served with Pap, Rice, or Samp.",
-        image: "/assets/images/meat_platter.jpg",
+        image: "assets/images/meat_platter.jpg",
         isBestSeller: false,
         isSoldOut: false,
         badge: ""
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "mains",
         price: "R80",
         description: "A-grade tender beef steak grill-seared with traditional spice seasoning. Served with Pap, Rice, or Samp.",
-        image: "/assets/images/hero_grill.jpg",
+        image: "assets/images/hero_grill.jpg",
         isBestSeller: false,
         isSoldOut: false,
         badge: "Prime Cut"
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "mains",
         price: "R100",
         description: "Gourmet dual feast of grilled quarter chicken and a juicy wors portion. Served with Pap, Rice, or Samp.",
-        image: "/assets/images/meat_platter.jpg",
+        image: "assets/images/meat_platter.jpg",
         isBestSeller: false,
         isSoldOut: false,
         badge: ""
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "mains",
         price: "R110",
         description: "Tender grilled sirloin steak combined with our traditional spiced boerewors. Served with Pap, Rice, or Samp.",
-        image: "/assets/images/meat_platter.jpg",
+        image: "assets/images/meat_platter.jpg",
         isBestSeller: false,
         isSoldOut: false,
         badge: ""
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "bunnies",
         price: "R45",
         description: "Classic quarter bread hollowed and loaded with golden fries, fried russian sausage, fried egg, cheese, and fresh kasi garnish.",
-        image: "/assets/images/kasi_kota.jpg",
+        image: "assets/images/kasi_kota.jpg",
         isBestSeller: false,
         isSoldOut: false,
         badge: "Joburg Favorite"
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "bunnies",
         price: "R40",
         description: "Traditional bunny chow loaded to overflowing with slow-simmered savory minced beef curry, topped with melted cheese and hand-cut chips.",
-        image: "/assets/images/mince_bunny.jpg",
+        image: "assets/images/mince_bunny.jpg",
         isBestSeller: false,
         isSoldOut: false,
         badge: "Traditional"
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "wings",
         price: "R85",
         description: "Four crispy full-sized chicken wings flame-grilled and tossed in a sticky, sweet-and-smoky BBQ glaze. Served with golden fries.",
-        image: "/assets/images/bbq_wings.jpg",
+        image: "assets/images/bbq_wings.jpg",
         isBestSeller: false,
         isSoldOut: false,
         badge: "Gourmet Crisp"
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "platters",
         price: "R160",
         description: "The local sharing favorite. Tender grilled steak, BBQ wings, and sizzled boerewors. Served with a mountain of hot Pap.",
-        image: "/assets/images/meat_platter.jpg",
+        image: "assets/images/meat_platter.jpg",
         isBestSeller: false,
         isSoldOut: false,
         badge: "Perfect Sharing"
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "platters",
         price: "R210",
         description: "Satiating platter with rich tender steak, half flame-grilled chicken, and boerewors. Served with a generous portion of steaming Pap.",
-        image: "/assets/images/meat_platter.jpg",
+        image: "assets/images/meat_platter.jpg",
         isBestSeller: false,
         isSoldOut: false,
         badge: ""
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "platters",
         price: "R510",
         description: "Our ultimate family platter: 2x Steaks, 2x half Chickens, 2x portions of juicy Boerewors, and 2x crispy full Wings. Served with family-sized Pap.",
-        image: "/assets/images/meat_platter.jpg",
+        image: "assets/images/meat_platter.jpg",
         isBestSeller: false,
         isSoldOut: false,
         badge: "Mega Family Feast"
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "fries",
         price: "R20 / R45",
         description: "Hand-cut, double-fried golden potato chips sprinkled with Jack's secret dry-rub kasi shaker seasoning.",
-        image: "/assets/images/bbq_wings.jpg",
+        image: "assets/images/bbq_wings.jpg",
         isBestSeller: false,
         isSoldOut: false,
         badge: ""
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "fries",
         price: "R80",
         description: "Golden flame-grilled chicken basted in spicy glaze and served with our generous signature rustic fries.",
-        image: "/assets/images/bbq_wings.jpg",
+        image: "assets/images/bbq_wings.jpg",
         isBestSeller: false,
         isSoldOut: false,
         badge: ""
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "fries",
         price: "R70",
         description: "Glistening sticky-sweet BBQ grilled wings served hot with a heap of signature seasoned potato fries.",
-        image: "/assets/images/bbq_wings.jpg",
+        image: "assets/images/bbq_wings.jpg",
         isBestSeller: false,
         isSoldOut: false,
         badge: ""
@@ -229,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "fries",
         price: "R65",
         description: "Thick traditional boerewors grilled over red-hot coals, paired beautifully with signature rustic fries.",
-        image: "/assets/images/meat_platter.jpg",
+        image: "assets/images/meat_platter.jpg",
         isBestSeller: false,
         isSoldOut: false,
         badge: ""
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
         category: "fries",
         price: "R65",
         description: "Classic boerewors roll in a soft, fresh long bun drizzled with caramelised onions and sweet sauce, with side fries.",
-        image: "/assets/images/meat_platter.jpg",
+        image: "assets/images/meat_platter.jpg",
         isBestSeller: false,
         isSoldOut: false,
         badge: "Value Meal"
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
         name: "Kasi Kota & Fries Special",
         price: "R40.00",
         catchy: "Get our legendary quarter loaded kota for R5 less today!",
-        image: "/assets/images/kasi_kota.jpg"
+        image: "assets/images/kasi_kota.jpg"
       }
     ],
     credentials: {
@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Logout
   document.getElementById('logoutBtn').addEventListener('click', () => {
     localStorage.removeItem('jacks_grill_admin_authenticated');
-    window.location.replace('/login.html');
+    window.location.replace('login.html');
   });
 
   // Reset to default settings
@@ -397,7 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const logoIcons = document.querySelectorAll('.admin-sidebar .logo-icon');
     if (t.logoMode === 'image' && t.logoImage) {
       logoIcons.forEach(el => {
-        el.innerHTML = `<img src="${t.logoImage}" alt="Logo" referrerpolicy="no-referrer" onerror="this.src='/assets/images/logo.jpg'">`;
+        el.innerHTML = `<img src="${t.logoImage}" alt="Logo" referrerpolicy="no-referrer" onerror="this.src='assets/images/logo.jpg'">`;
         el.classList.add('has-image');
       });
     } else {
@@ -474,7 +474,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       row.innerHTML = `
         <td>
-          <img src="${item.image || '/assets/images/beef_stew.jpg'}" alt="${item.name}" class="tbl-food-img" onerror="this.src='/assets/images/beef_stew.jpg'">
+          <img src="${item.image || 'assets/images/beef_stew.jpg'}" alt="${item.name}" class="tbl-food-img" onerror="this.src='assets/images/beef_stew.jpg'">
         </td>
         <td><strong>${item.name}</strong></td>
         <td><span class="font-mono text-gold" style="font-size:0.85rem">${item.category.toUpperCase()}</span></td>
@@ -701,7 +701,7 @@ document.addEventListener('DOMContentLoaded', () => {
       description,
       isBestSeller,
       isSoldOut,
-      image: tempBase64Image || '/assets/images/beef_stew.jpg'
+      image: tempBase64Image || 'assets/images/beef_stew.jpg'
     };
 
     if (indexStr) {
@@ -881,7 +881,7 @@ document.addEventListener('DOMContentLoaded', () => {
       spot.className = 'g-admin-spot';
       spot.innerHTML = `
         <div class="g-admin-preview">
-          <img src="${item.image}" alt="${item.title}" onerror="this.src='/assets/images/hero_grill.jpg'">
+          <img src="${item.image}" alt="${item.title}" onerror="this.src='assets/images/hero_grill.jpg'">
           <span class="g-admin-num">Spot ${index + 1}</span>
         </div>
         <div class="form-group" style="margin-bottom:0.5rem">
@@ -1010,7 +1010,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Preset / Reset button
     document.getElementById('logoPresetDefaultBtn').addEventListener('click', () => {
-      const url = '/assets/images/logo.jpg';
+      const url = 'assets/images/logo.jpg';
       urlInput.value = url;
       logoTempBase64Image = url;
       document.getElementById('themeLogoImagePreview').src = url;
@@ -1019,7 +1019,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Reset button inside preview frame
     document.getElementById('logoBtnClearImage').addEventListener('click', () => {
-      const url = '/assets/images/logo.jpg';
+      const url = 'assets/images/logo.jpg';
       logoTempBase64Image = url;
       document.getElementById('themeLogoImagePreview').src = url;
       urlInput.value = url;
@@ -1046,7 +1046,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Image logo settings
     document.getElementById('themeLogoMode').value = t.logoMode || 'image';
-    logoTempBase64Image = t.logoImage || '/assets/images/logo.jpg';
+    logoTempBase64Image = t.logoImage || 'assets/images/logo.jpg';
     document.getElementById('themeLogoImagePreview').src = logoTempBase64Image;
     document.getElementById('themeLogoImageUrl').value = logoTempBase64Image.startsWith('data:') ? '' : logoTempBase64Image;
 
@@ -1150,12 +1150,12 @@ document.addEventListener('DOMContentLoaded', () => {
     currentDB.theme.logoLetter = document.getElementById('themeLogoLetter').value.trim();
     currentDB.theme.logoText = document.getElementById('themeLogoText').value.trim();
     currentDB.theme.logoMode = document.getElementById('themeLogoMode').value;
-    currentDB.theme.logoImage = logoTempBase64Image || '/assets/images/logo.jpg';
+    currentDB.theme.logoImage = logoTempBase64Image || 'assets/images/logo.jpg';
   }
 
   // Live website preview action button
   document.getElementById('quickViewSiteBtn').addEventListener('click', () => {
-    window.open('/index.html', '_blank');
+    window.open('index.html', '_blank');
   });
 
   // --- SPECIALS MANAGEMENT ---
@@ -1216,7 +1216,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const row = document.createElement('tr');
       row.innerHTML = `
         <td>
-          <img src="${special.image || '/assets/images/meat_platter.jpg'}" alt="${special.name}" class="tbl-item-img" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;" onerror="this.src='/assets/images/meat_platter.jpg'">
+          <img src="${special.image || 'assets/images/meat_platter.jpg'}" alt="${special.name}" class="tbl-item-img" style="width: 48px; height: 48px; object-fit: cover; border-radius: 8px;" onerror="this.src='assets/images/meat_platter.jpg'">
         </td>
         <td><strong>${special.name}</strong></td>
         <td><span class="text-gold" style="font-weight: 600;">${special.price}</span></td>
@@ -1259,7 +1259,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const name = document.getElementById('specialName').value.trim();
       const price = document.getElementById('specialPrice').value.trim();
       const catchy = document.getElementById('specialCatchy').value.trim();
-      const image = document.getElementById('specialImage').value.trim() || '/assets/images/meat_platter.jpg';
+      const image = document.getElementById('specialImage').value.trim() || 'assets/images/meat_platter.jpg';
       
       const newSpecial = {
         id: 'special_' + Date.now(),
